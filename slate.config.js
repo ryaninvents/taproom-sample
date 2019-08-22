@@ -15,4 +15,6 @@ module.exports = {
       },
     },
   },
+  'ssl.cert': path.resolve('./localhost.crt'),
+  'ssl.key': path.resolve('./localhost.key')
 };
