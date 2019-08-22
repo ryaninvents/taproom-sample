@@ -1,25 +1,42 @@
 {
-  "name": "starter-theme",
-  "version": "1.0.0-alpha.1",
+  "name": "rmkennedy-taproom",
+  "version": "0.0.0-semantically-released",
   "private": true,
-  "author": "Shopify Inc.",
   "description": "An opinionated, Slate compatible, starting point for developing Shopify themes.",
   "keywords": [
     "shopify",
     "theme"
   ],
-  "bugs": "https://github.com/Shopify/starter-theme/issues",
-  "license": "MIT",
+  "bugs": "https://github.com/ryaninvents/taproom-sample/issues",
   "repository": {
     "type": "git",
-    "url": "https://github.com/Shopify/starter-theme.git"
+    "url": "https://github.com/ryaninvents/taproom-sample.git"
   },
-  "devDependencies": {
-    "@shopify/slate-tools": "1.0.0-beta.15",
-    "babel-preset-shopify": "^16.2.0",
-    "eslint-plugin-shopify": "^19.0.0",
-    "stylelint-config-prettier": "^3.0.4",
-    "stylelint-config-shopify": "^5.0.0"
+  "license": "MIT",
+  "author": "Ryan Kennedy <ryan@rmkennedy.com>",
+  "scripts": {
+    "build": "slate-tools build",
+    "deploy": "slate-tools build && slate-tools deploy",
+    "format": "slate-tools format",
+    "lint": "slate-tools lint",
+    "start": "slate-tools start",
+    "watch": "slate-tools start --skipFirstDeploy",
+    "zip": "slate-tools build && slate-tools zip"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "lint-staged"
+    }
+  },
+  "lint-staged": {
+    "package.json": [
+      "sort-package-json",
+      "git add"
+    ],
+    "src/**/*.{js,jsx,ts,tsx}": [
+      "eslint --fix",
+      "git add"
+    ]
   },
   "dependencies": {
     "@shopify/theme-a11y": "^2.0.1",
@@ -38,13 +55,20 @@
     "normalize.css": "^7.0.0",
     "qrcode": "^1.3.2"
   },
-  "scripts": {
-    "start": "slate-tools start",
-    "watch": "slate-tools start --skipFirstDeploy",
-    "build": "slate-tools build",
-    "deploy": "slate-tools build && slate-tools deploy",
-    "zip": "slate-tools build && slate-tools zip",
-    "lint": "slate-tools lint",
-    "format": "slate-tools format"
+  "devDependencies": {
+    "@semantic-release/changelog": "^3.0.2",
+    "@semantic-release/commit-analyzer": "^7.0.0-beta.2",
+    "@semantic-release/git": "^7.1.0-beta.3",
+    "@semantic-release/github": "^5.4.0-beta.1",
+    "@semantic-release/npm": "^5.2.0-beta.6",
+    "@shopify/slate-tools": "1.0.0-beta.15",
+    "babel-preset-shopify": "^16.2.0",
+    "eslint-plugin-shopify": "^19.0.0",
+    "husky": "^3.0.4",
+    "lint-staged": "^9.2.3",
+    "semantic-release": "^16.0.0-beta.19",
+    "sort-package-json": "^1.22.1",
+    "stylelint-config-prettier": "^3.0.4",
+    "stylelint-config-shopify": "^5.0.0"
   }
 }
