@@ -20,6 +20,7 @@
     "format": "slate-tools format",
     "lint": "slate-tools lint",
     "start": "slate-tools start",
+    "test": "echo No tests yet, YOLO",
     "watch": "slate-tools start --skipFirstDeploy",
     "zip": "slate-tools build && slate-tools zip"
   },
