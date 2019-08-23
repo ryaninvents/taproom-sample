@@ -11,7 +11,7 @@ module.exports = {
     }],
     ['@semantic-release/github', {
       assets: [{
-        path: 'rmkennedy-taproom.zip',
+        path: '*.zip',
         label: 'Deployable theme',
       }],
     }],

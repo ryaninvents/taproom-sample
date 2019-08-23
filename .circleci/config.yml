@@ -37,6 +37,18 @@ jobs:
       - run:
           name: test
           command: npm test
+  zip:
+    docker: *NodeDocker
+    steps:
+      - checkout
+      - *AttachWorkspaceHere
+      - run:
+          name: zip
+          command: npx slate-tools zip
+      - persist_to_workspace:
+          root: .
+          paths:
+            - *.zip
   release:
     docker: *NodeDocker
     steps:
@@ -59,8 +71,12 @@ workflows:
           context: gh-npm-public
           requires:
             - install
-      - release:
+      - zip:
           context: gh-npm-public
           requires:
             - build
+      - release:
+          context: gh-npm-public
+          requires:
             - test
+            - zip
