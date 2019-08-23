@@ -4,8 +4,9 @@
 // For more information, visit https://github.com/Shopify/slate/wiki/Slate-Configuration
 
 const path = require('path');
+const envCi = require('env-ci');
 
-module.exports = {
+const config = {
   'cssVarLoader.liquidPath': ['src/snippets/css-variables.liquid'],
   'webpack.extend': {
     resolve: {
@@ -18,3 +19,11 @@ module.exports = {
   'ssl.cert': path.resolve('./localhost.crt'),
   'ssl.key': path.resolve('./localhost.key')
 };
+
+const {isCi} = envCi();
+
+if (isCi) {
+  config['paths.slateRc'] = path.resolve('./.circleci/.slaterc');
+}
+
+module.exports = config;

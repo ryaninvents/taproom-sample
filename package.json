@@ -64,6 +64,7 @@
     "@semantic-release/npm": "^5.2.0-beta.6",
     "@shopify/slate-tools": "1.0.0-beta.15",
     "babel-preset-shopify": "^16.2.0",
+    "env-ci": "^4.1.1",
     "eslint-plugin-shopify": "^19.0.0",
     "husky": "^3.0.4",
     "lint-staged": "^9.2.3",
