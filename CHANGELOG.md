@@ -1,3 +1,10 @@
+## [1.3.1](https://github.com/ryaninvents/taproom-sample/compare/v1.3.0...v1.3.1) (2019-08-24)
+
+
+### Bug Fixes
+
+* improve header link spacing ([5242514](https://github.com/ryaninvents/taproom-sample/commit/5242514))
+
 # [1.3.0](https://github.com/ryaninvents/taproom-sample/compare/v1.2.1...v1.3.0) (2019-08-24)
 
 
