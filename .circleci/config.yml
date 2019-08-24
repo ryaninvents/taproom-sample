@@ -73,7 +73,9 @@ jobs:
           name: Verify screenshots
           command: 'ls *.png || exit 0'
       - store_artifacts:
-          path: '*.png'
+          path: 'home-desktop.png'
+      - store_artifacts:
+          path: 'home-mobile.png'
   zip:
     docker: *NodeDocker
     steps:
