@@ -24,6 +24,7 @@
     --color-dark: {{ settings.color_tertiary }};
 
     --font-heading: {{ settings.font_heading.family }}, {{ settings.font_heading.fallback_families }};
+    --font-heading-weight: {{ settings.font_heading.weight | default: '400' }};
     --font-body: {{ settings.font_body.family }}, {{ settings.font_body.fallback_families }};
     --font-body-weight: {{ settings.font_body.weight }};
     --font-body-style: {{ settings.font_body.style }};
