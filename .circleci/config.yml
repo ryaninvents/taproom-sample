@@ -66,8 +66,11 @@ jobs:
           command: yarn test:e2e
           environment:
             NODE_ENV: test
+      - run:
+          name: Move screenshots
+          command: cp cypress/screenshots/**/*.png .
       - store_artifacts:
-          path: cypress/screenshots
+          path: '*.png'
   zip:
     docker: *NodeDocker
     steps:

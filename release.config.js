@@ -14,7 +14,7 @@ module.exports = {
         path: '*.zip',
         label: 'Deployable theme',
       }, {
-        path: 'cypress/screenshots/**/*.png',
+        path: '*.png',
         label: 'Theme previews',
       }],
     }],
