@@ -1,0 +1,62 @@
+@import '../variables';
+
+.header {
+  display: flex;
+  flex-flow: column nowrap;
+  font-size: $text-base;
+}
+
+.header a {
+  color: var(--color-body-text);
+}
+
+.header__banner {
+  background-color: var(--color-light);
+  color: var(--color-dark);
+  display: flex;
+  flex-flow: row nowrap;
+  align-items: center;
+  justify-content: space-between;
+
+  padding: $space-2 $space-4;
+
+  h1, .h1 {
+    margin: 0;
+  }
+}
+
+.header__brand-logo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.header__announce {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  text-align: center;
+  font-size: $text-sm;
+
+  p {
+    margin: $space-2 $space-3;
+  }
+}
+
+.header__nav ul {
+  display: flex;
+  flex-flow: row nowrap;
+  list-style-type: none;
+  margin: 0;
+}
+
+.header__nav-item {
+  padding: $space-2;
+}
+
+.header__right-actions {
+  white-space: nowrap;
+}

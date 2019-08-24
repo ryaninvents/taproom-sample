@@ -2,6 +2,8 @@
   "current": "Default",
   "presets": {
     "Default": {
+      "font_heading": "montserrat_n4",
+      "font_body": "montserrat_n4",
       "sections": {
         "collection-list": {
           "type": "collection-list",

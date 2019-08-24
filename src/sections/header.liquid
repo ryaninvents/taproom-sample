@@ -10,9 +10,9 @@
   Theme Store optional settings
   - Home page only: only shows on the home page
 {%- endcomment -%}
-<section data-section-id="{{ section.id }}" data-section-type="header">
+<section data-section-id="{{ section.id }}" data-section-type="header" class="header">
   {%- if section.settings.announcement_bar_enabled -%}
-    <div>
+    <div class="header__announce">
       {%- if section.settings.announcement_bar_home_page_only == false or template.name == 'index' -%}
         {%- if section.settings.announcement_bar_link != blank -%}
           <a href="{{ section.settings.announcement_bar_link }}">
@@ -25,33 +25,64 @@
     </div>
   {%- endif -%}
 
-  <header role="banner">
+  <header role="banner" class="header__banner">
+    {%- capture bannerLogo -%}
+      <a href="/" class="header__brand-logo">
+        {% if section.settings.logo != blank %}
+          {% capture image_size %}{{ section.settings.logo_max_width }}x{% endcapture %}
+          <img src="{{ section.settings.logo | img_url: image_size }}"
+              srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
+              alt="{{ section.settings.logo.alt | default: shop.name }}">
+        {% else %}
+          {{ shop.name }}
+        {% endif %}
+      </a>
+    {%- endcapture -%}
     {% if template.name == 'index' %}
-      <h1>
+      <h1>{{ bannerLogo }}</h1>
     {% else %}
-      <div class="h1">
-    {% endif %}
-        <a href="/" class="logo-image">
-          {% if section.settings.logo != blank %}
-            {% capture image_size %}{{ section.settings.logo_max_width }}x{% endcapture %}
-            <img src="{{ section.settings.logo | img_url: image_size }}"
-                srcset="{{ section.settings.logo | img_url: image_size }} 1x, {{ section.settings.logo | img_url: image_size, scale: 2 }} 2x"
-                alt="{{ section.settings.logo.alt | default: shop.name }}">
-          {% else %}
-            {{ shop.name }}
-          {% endif %}
-        </a>
-    {% if template.name == 'index' %}
-      </h1>
-    {% else %}
-      </div>
-    {% endif %}
+      <div class="h1">{{ bannerLogo }}</div>
+    {% endif -%}
 
-    <a href="/cart">
-      {% include 'icon-cart' %}
-      {{ 'layout.cart.title' | t }}
-      ({{ cart.item_count }} {{ 'layout.cart.items_count' | t: count: cart.item_count }})
-    </a>
+    <nav role="navigation" class="header__nav">
+      <ul>
+        {%- for link in linklists[section.settings.menu].links -%}
+          {%- if link.links != blank -%}
+            <li class="header__nav-item">
+              <a href="{{ link.url }}">
+                {{ link.title }}
+                {% include 'icon-arrow-down' %}
+              </a>
+              <ul>
+                {%- for childlink in link.links -%}
+                  <li>
+                    <a href="{{ childlink.url }}">
+                      {{ childlink.title }}
+                    </a>
+                  </li>
+                {%- endfor -%}
+              </ul>
+            </li>
+          {%- else -%}
+            <li class="header__nav-item">
+              <a href="{{ link.url }}">
+                {{ link.title }}
+              </a>
+            </li>
+          {%- endif -%}
+        {%- endfor -%}
+      </ul>
+    </nav>
+
+    <div class="header__right-actions">
+      {%- include 'icon-search' -%}
+      {%- include 'icon-fave' -%}
+      <a href="/cart">
+        {% include 'icon-cart' %}
+        <!-- {{ 'layout.cart.title' | t }}
+        ({{ cart.item_count }} {{ 'layout.cart.items_count' | t: count: cart.item_count }}) -->
+      </a>
+    </div>
 
     {% if shop.customer_accounts_enabled %}
       <ul>
@@ -78,7 +109,10 @@
       </ul>
     {% endif %}
 
-    <form action="/search" method="get" role="search">
+    {%- comment -%}
+      TODO: break out search into interactive element
+    {%- endcomment -%}
+    <form action="/search" method="get" role="search" style="display: none;">
       <label for="Search-{{ section.id }}" class="label-hidden">
         {{ 'general.search.placeholder' | t }}
       </label>
@@ -95,36 +129,6 @@
       </button>
     </form>
   </header>
-
-  <nav role="navigation">
-    <ul>
-      {% for link in linklists[section.settings.menu].links %}
-        {% if link.links != blank %}
-          <li>
-            <a href="{{ link.url }}">
-              {{ link.title }}
-              {% include 'icon-arrow-down' %}
-            </a>
-            <ul>
-              {% for childlink in link.links %}
-                <li>
-                  <a href="{{ childlink.url }}">
-                    {{ childlink.title }}
-                  </a>
-                </li>
-              {% endfor %}
-            </ul>
-          </li>
-        {% else %}
-          <li>
-            <a href="{{ link.url }}">
-              {{ link.title }}
-            </a>
-          </li>
-        {% endif %}
-      {% endfor %}
-    </ul>
-  </nav>
 </section>
 
 {% if section.settings.logo != blank %}
