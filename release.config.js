@@ -15,8 +15,11 @@ module.exports = {
         path: '*.zip',
         label: 'Deployable theme',
       }, {
-        path: '*.png',
-        label: 'Theme previews',
+        path: 'home-desktop.png',
+        label: 'Theme preview for desktop',
+      }, {
+        path: 'home-mobile.png',
+        label: 'Theme preview for mobile',
       }],
     }],
   ],
