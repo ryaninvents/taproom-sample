@@ -105,8 +105,9 @@
 
 
 <style>
+{{ section.settings.subtitle_font | font_face }}
 .hero {
-  {%- case settings.section.hero_size -%}
+  {%- case section.settings.hero_size -%}
     {%- when 'x-small' -%}
       min-height: 10rem;
     {%- when 'small' -%}
@@ -120,6 +121,11 @@
     {%- when 'adapt' -%}
     {%- else -%}
   {%- endcase -%}
+}
+.hero[data-section-id="{{ section.id }}"] .hero__mega-subtitle {
+  font-family: "{{ section.settings.subtitle_font.family }}", sans-serif;
+  font-style: {{ section.settings.subtitle_font.style }};
+  font-weight: {{ section.settings.subtitle_font.weight }};
 }
 </style>
 
@@ -621,6 +627,15 @@
           "value": "dark"
         }
       ]
+    },
+    {
+      "type": "font_picker",
+      "id": "subtitle_font",
+      "label": {
+        "en": "Subtitle font",
+        "fr": "Font de soutitre"
+      },
+      "default": "montserrat_n4"
     },
     {
       "type": "text",

@@ -68,7 +68,10 @@ jobs:
             NODE_ENV: test
       - run:
           name: Move screenshots
-          command: cp cypress/screenshots/**/*.png .
+          command: cp cypress/screenshots/*/*.png .
+      - run:
+          name: Verify screenshots
+          command: 'ls *.png || exit 0'
       - store_artifacts:
           path: '*.png'
   zip:
