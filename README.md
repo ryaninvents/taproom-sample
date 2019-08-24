@@ -39,6 +39,14 @@ openssl req -x509 -out localhost.crt -keyout localhost.key \
    printf "[dn]\nCN=localhost\n[req]\ndistinguished_name = dn\n[EXT]\nsubjectAltName=DNS:localhost\nkeyUsage=digitalSignature\nextendedKeyUsage=serverAuth")
 ```
 
+## Running Cypress tests
+
+```bash
+# Make sure you've set up your `.env` file as necessary
+npx gulp precypress
+yarn test:e2e
+```
+
 ## Contributing
 
 For help on setting up the repository locally, building, testing, and contributing

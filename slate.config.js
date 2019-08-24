@@ -24,6 +24,7 @@ const {isCi} = envCi();
 
 if (isCi) {
   config['paths.slateRc'] = path.resolve('./.circleci/.slaterc');
+  config['cli.promptSettings'] = false;
 }
 
 module.exports = config;

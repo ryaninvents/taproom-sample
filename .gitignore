@@ -18,6 +18,7 @@ npm-debug.log
 /*.crt
 /*.key
 
+/cypress.json
 
 # Compiled source #
 ###################

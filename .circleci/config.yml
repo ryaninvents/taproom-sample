@@ -11,10 +11,14 @@ jobs:
       - run:
           name: install
           command: yarn
+      - run:
+          name: Prepare Cypress
+          command: npx gulp precypress
       - persist_to_workspace:
           root: .
           paths:
             - node_modules/**
+            - cypress.json
   build:
     docker: *NodeDocker
     steps:
@@ -29,7 +33,7 @@ jobs:
           root: .
           paths:
             - dist
-  test:
+  unitTest:
     docker: *NodeDocker
     steps:
       - checkout
@@ -37,6 +41,33 @@ jobs:
       - run:
           name: test
           command: npm test
+  deploy:
+    docker: *NodeDocker
+    steps:
+      - checkout
+      - *AttachWorkspaceHere
+      - run:
+          name: test
+          command: npx slate-tools deploy
+  e2eTest:
+    docker:
+    - image: cypress/browsers:chrome67
+    steps:
+      - checkout
+      - attach_workspace:
+          at: .
+      - run:
+          name: 'cypress install'
+          command: 'npx cypress install'
+          environment:
+            NODE_ENV: development
+      - run:
+          name: test
+          command: yarn test:e2e
+          environment:
+            NODE_ENV: test
+      - store_artifacts:
+          path: cypress/screenshots
   zip:
     docker: *NodeDocker
     steps:
@@ -67,7 +98,7 @@ workflows:
           context: gh-npm-public
           requires:
             - install
-      - test:
+      - unitTest:
           context: gh-npm-public
           requires:
             - install
@@ -75,8 +106,17 @@ workflows:
           context: gh-npm-public
           requires:
             - build
+      - deploy:
+          context: gh-npm-public
+          requires:
+            - build
+      - e2eTest:
+          context: gh-npm-public
+          requires:
+            - deploy
       - release:
           context: gh-npm-public
           requires:
-            - test
+            - e2eTest
+            - unitTest
             - zip
