@@ -1,0 +1,39 @@
+@import '../variables';
+
+.hero__overlay {
+  height: 100%;
+  display: flex;
+  flex-flow: column nowrap;
+  align-items: start;
+  justify-content: center;
+  padding-bottom: $space-8;
+  padding-left: 10vw;
+}
+
+.hero__inner {
+  padding: $space-6;
+}
+
+.hero__content {
+  max-width: 20rem;
+}
+
+.hero__content--light {
+  color: var(--color-light);
+  text-shadow: 0 2px 6px rgba(0, 0, 0, 0.5);
+}
+
+.hero__content--dark {
+  color: var(--color-dark);
+}
+
+.hero__mega-title {
+  font-weight: var(--font-body-weight);
+}
+
+.hero__mega-subtitle {
+  font-family: var(--font-body);
+  font-weight: $font-weight-light;
+  font-size: $text-lg;
+  font-style: italic;
+}

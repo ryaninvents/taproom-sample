@@ -48,12 +48,12 @@
       <ul>
         {%- for link in linklists[section.settings.menu].links -%}
           {%- if link.links != blank -%}
-            <li class="header__nav-item">
+            <li class="header__nav-item header__nav-menu">
               <a href="{{ link.url }}">
                 {{ link.title }}
                 {% include 'icon-arrow-down' %}
               </a>
-              <ul>
+              <ul style="display:none;">
                 {%- for childlink in link.links -%}
                   <li>
                     <a href="{{ childlink.url }}">
@@ -75,8 +75,12 @@
     </nav>
 
     <div class="header__right-actions">
-      {%- include 'icon-search' -%}
-      {%- include 'icon-fave' -%}
+      <button class="header__action-button">
+        {%- include 'icon-search' -%}
+      </button>
+      <button class="header__action-button">
+        {%- include 'icon-fave' -%}
+      </button>
       <a href="/cart">
         {% include 'icon-cart' %}
         <!-- {{ 'layout.cart.title' | t }}
