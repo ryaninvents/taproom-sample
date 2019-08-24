@@ -15,7 +15,7 @@
 }
 
 .hero__content {
-  max-width: 20rem;
+  max-width: 30rem;
 }
 
 .hero__content--light {
@@ -28,11 +28,12 @@
 }
 
 .hero__mega-title {
-  font-weight: var(--font-body-weight);
+  font-size: 4rem;
+  line-height: 0.9;
+  margin-bottom: $space-5;
 }
 
 .hero__mega-subtitle {
-  font-weight: $font-weight-light;
   font-size: $text-lg;
-  font-style: italic;
+  line-height: 1.31;
 }

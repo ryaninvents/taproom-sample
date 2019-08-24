@@ -1,56 +1,163 @@
 {
-  "current": "Default",
+  "current": {
+    "color_primary": "#1975e6",
+    "color_secondary": "#248efb",
+    "color_tertiary": "#29333f",
+    "color_accent_gray": "#6c7682",
+    "color_accent_light_gray": "#e6e9ed",
+    "color_off_white": "#f2f5fa",
+    "font_heading": "montserrat_n4",
+    "font_body": "montserrat_n4",
+    "share_image": "",
+    "social_sharing_blog": true,
+    "share_facebook": true,
+    "share_twitter": true,
+    "share_pinterest": true,
+    "social_twitter_link": "",
+    "social_facebook_link": "",
+    "social_pinterest_link": "",
+    "social_instagram_link": "",
+    "social_snapchat_link": "",
+    "social_tumblr_link": "",
+    "social_youtube_link": "",
+    "social_vimeo_link": "",
+    "cart_notes_enable": true,
+    "favicon": "",
+    "checkout_header_image": "",
+    "checkout_logo_image": "",
+    "checkout_logo_position": "left",
+    "checkout_logo_size": "medium",
+    "checkout_body_background_image": "",
+    "checkout_body_background_color": "#fff",
+    "checkout_input_background_color_mode": "white",
+    "checkout_sidebar_background_image": "",
+    "checkout_sidebar_background_color": "#fafafa",
+    "checkout_heading_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_body_font": "-apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol'",
+    "checkout_accent_color": "#197bbd",
+    "checkout_button_color": "#197bbd",
+    "checkout_error_color": "#e32c2b",
+    "sections": {
+      "collection-list": {
+        "type": "collection-list",
+        "blocks": {
+          "collection-list-0": {
+            "type": "collection",
+            "settings": {
+              "collection": ""
+            }
+          },
+          "collection-list-1": {
+            "type": "collection",
+            "settings": {
+              "collection": ""
+            }
+          },
+          "collection-list-2": {
+            "type": "collection",
+            "settings": {
+              "collection": ""
+            }
+          }
+        },
+        "block_order": [
+          "collection-list-0",
+          "collection-list-1",
+          "collection-list-2"
+        ],
+        "settings": {
+          "title": "Collection list"
+        }
+      },
+      "featured-collection": {
+        "type": "featured-collection",
+        "settings": {
+          "title": "Featured collection",
+          "collection": "frontpage"
+        }
+      },
+      "featured-product": {
+        "type": "featured-product",
+        "settings": {
+          "product": "",
+          "show_share_buttons": false
+        }
+      },
+      "header": {
+        "type": "header",
+        "settings": {
+          "announcement_bar_enabled": true,
+          "announcement_bar_home_page_only": true,
+          "announcement_bar_text": "Free shipping for orders over $100",
+          "announcement_bar_link": "",
+          "logo": "shopify:\/\/shop_images\/trifecta-lockup-dark_5024ba22-b382-443c-b90b-3d0af06722a2.png",
+          "logo_max_width": 140,
+          "menu": "main-menu"
+        }
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {
+          "footer_linklist": "footer",
+          "show_payment_icons": false
+        }
+      },
+      "1566675958301": {
+        "type": "hero",
+        "settings": {
+          "image": "shopify:\/\/shop_images\/lake-louise-crop.jpg",
+          "alignment": "center",
+          "hero_layout": "full_width",
+          "hero_size": "medium",
+          "text_size": "medium",
+          "text_color": "light",
+          "title_font": "montserrat_n5",
+          "subtitle_font": "montserrat_i3",
+          "title": "Hero Headline Dolor Sit Amet",
+          "text": "<p>Description curabitur lobortis id lorem id bibendum. Ut id consectetur magna. Quisque volutpat augue enim, pulvinar lobortis nibh lacinia at vestibulum nec.<\/p>",
+          "button_label": "",
+          "button_link": ""
+        }
+      }
+    },
+    "content_for_index": [
+      "1566675958301",
+      "collection-list",
+      "featured-collection",
+      "featured-product"
+    ]
+  },
   "presets": {
     "Default": {
       "font_heading": "montserrat_n4",
       "font_body": "montserrat_n4",
       "sections": {
-        "header": {
-          "type": "header",
-          "settings": {
-            "announcement_bar_enabled": true,
-            "announcement_bar_home_page_only": true,
-            "announcement_bar_text": "Free shipping on orders over $100",
-            "announcement_bar_link": "",
-            "logo": "shopify:\/\/shop_images\/trifecta-lockup-dark_5024ba22-b382-443c-b90b-3d0af06722a2.png",
-            "logo_max_width": 140,
-            "menu": "main-menu"
-          }
-        },
-        "hero": {
-          "type": "hero",
-          "settings": {
-            "image": "shopify:\/\/shop_images\/scenic-mountain-landscape.jpg",
-            "alignment": "bottom",
-            "hero_layout": "full_width",
-            "hero_size": "medium",
-            "text_size": "large",
-            "text_color": "light",
-            "subtitle_font": "montserrat_i3",
-            "title": "Hero Headline Dolor Sit Amet",
-            "text": "<p>Description curabitur lobortis id lorem id bibendum. Ut id consectetur magna. Quisque volutpat augue enim, pulvinar lobortis nibh lacinia at vestibulum nec<\/p>",
-            "button_label": "",
-            "button_link": ""
-          }
-        },
         "collection-list": {
           "type": "collection-list",
           "blocks": {
             "collection-list-0": {
-              "type": "collection"
+              "type": "collection",
+              "settings": {
+              }
             },
             "collection-list-1": {
-              "type": "collection"
+              "type": "collection",
+              "settings": {
+              }
             },
             "collection-list-2": {
-              "type": "collection"
+              "type": "collection",
+              "settings": {
+              }
             }
           },
           "block_order": [
             "collection-list-0",
             "collection-list-1",
             "collection-list-2"
-          ]
+          ],
+          "settings": {
+          }
         },
         "featured-collection": {
           "type": "featured-collection",
@@ -59,14 +166,15 @@
           }
         },
         "featured-product": {
-          "type": "featured-product"
+          "type": "featured-product",
+          "settings": {
+          }
         }
       },
       "content_for_index": [
-        "hero",
-        "featured-collections",
-        "feature-row",
-        "slideshow"
+        "collection-list",
+        "featured-collection",
+        "featured-product"
       ]
     }
   }

@@ -42,7 +42,7 @@
       </div>
       {%- if section.settings.image != blank -%}
         <img class="hero__image lazyload lazypreload"
-             src="{{ section.settings.image | img_url: '300x300' }}"
+             src="{{ section.settings.image | img_url: '800x800' }}"
              data-src="{{ img_url }}"
              data-widths="[180, 360, 470, 600, 770, 970, 1060, 1280, 1512, 1728, 2048]"
              data-aspectratio="{{ section.settings.image.aspect_ratio }}"
@@ -71,7 +71,7 @@
          data-bgset="{% include 'bgset', image: section.settings.image %}"
          data-sizes="auto"
          data-parent-fit="cover"
-         style="background-position: {{ section.settings.alignment }}; background-image: url('{{ section.settings.image | img_url: '300x300' }});"
+         style="background-size: cover; background-position: {{ section.settings.alignment }}; background-image: url('{{ section.settings.image | img_url: '800x800' }});"
          {%- endif -%}>
     {%- if section.settings.image == blank -%}
       <div class="placeholder-background">
@@ -113,7 +113,7 @@
     {%- when 'small' -%}
       min-height: 30vh;
     {%- when 'medium' -%}
-      min-height: 50vh;
+      min-height: 70vh;
     {%- when 'large' -%}
       min-height: 80vh;
     {%- when 'x-large' -%}
@@ -121,6 +121,11 @@
     {%- when 'adapt' -%}
     {%- else -%}
   {%- endcase -%}
+}
+.hero[data-section-id="{{ section.id }}"] .hero__mega-title {
+  font-family: "{{ section.settings.title_font.family }}", sans-serif;
+  font-style: {{ section.settings.title_font.style }};
+  font-weight: {{ section.settings.title_font.weight }};
 }
 .hero[data-section-id="{{ section.id }}"] .hero__mega-subtitle {
   font-family: "{{ section.settings.subtitle_font.family }}", sans-serif;
@@ -630,12 +635,21 @@
     },
     {
       "type": "font_picker",
+      "id": "title_font",
+      "label": {
+        "en": "Title font",
+        "fr": "Font du titre"
+      },
+      "default": "montserrat_n5"
+    },
+    {
+      "type": "font_picker",
       "id": "subtitle_font",
       "label": {
         "en": "Subtitle font",
-        "fr": "Font de soutitre"
+        "fr": "Font du soutitre"
       },
-      "default": "montserrat_n4"
+      "default": "montserrat_i3"
     },
     {
       "type": "text",
