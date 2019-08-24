@@ -5,6 +5,34 @@
       "font_heading": "montserrat_n4",
       "font_body": "montserrat_n4",
       "sections": {
+        "header": {
+          "type": "header",
+          "settings": {
+            "announcement_bar_enabled": true,
+            "announcement_bar_home_page_only": true,
+            "announcement_bar_text": "Free shipping on orders over $100",
+            "announcement_bar_link": "",
+            "logo": "shopify:\/\/shop_images\/trifecta-lockup-dark_5024ba22-b382-443c-b90b-3d0af06722a2.png",
+            "logo_max_width": 140,
+            "menu": "main-menu"
+          }
+        },
+        "hero": {
+          "type": "hero",
+          "settings": {
+            "image": "shopify:\/\/shop_images\/scenic-mountain-landscape.jpg",
+            "alignment": "bottom",
+            "hero_layout": "full_width",
+            "hero_size": "medium",
+            "text_size": "large",
+            "text_color": "light",
+            "subtitle_font": "montserrat_i3",
+            "title": "Hero Headline Dolor Sit Amet",
+            "text": "<p>Description curabitur lobortis id lorem id bibendum. Ut id consectetur magna. Quisque volutpat augue enim, pulvinar lobortis nibh lacinia at vestibulum nec<\/p>",
+            "button_label": "",
+            "button_link": ""
+          }
+        },
         "collection-list": {
           "type": "collection-list",
           "blocks": {
@@ -35,9 +63,10 @@
         }
       },
       "content_for_index": [
-        "collection-list",
-        "featured-collection",
-        "featured-product"
+        "hero",
+        "featured-collections",
+        "feature-row",
+        "slideshow"
       ]
     }
   }
