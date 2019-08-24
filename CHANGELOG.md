@@ -1,3 +1,10 @@
+# [1.3.0](https://github.com/ryaninvents/taproom-sample/compare/v1.2.1...v1.3.0) (2019-08-24)
+
+
+### Features
+
+* finally happy with the hero image overall ([6510812](https://github.com/ryaninvents/taproom-sample/commit/6510812))
+
 ## [1.2.1](https://github.com/ryaninvents/taproom-sample/compare/v1.2.0...v1.2.1) (2019-08-24)
 
 
