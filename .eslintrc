@@ -13,12 +13,15 @@
     "no-alert": 0,
     "no-console": 0,
     "no-new": 0,
-    "node/shebang": 0
+    "node/shebang": 0,
+    "import/no-extraneous-dependencies": "off"
   },
   "globals": {
     "document": true,
     "window": true,
     "Shopify": true,
-    "theme": true
+    "theme": true,
+    "module": true,
+    "fetch": false
   }
 }
