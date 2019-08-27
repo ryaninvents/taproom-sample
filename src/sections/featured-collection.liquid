@@ -8,14 +8,14 @@
   Theme Store optional settings
   - Heading: title of the featured collection section
 {%- endcomment -%}
-<section class="featured-collection">
+<section class="featured-collection" id="featured-collection-{{ section.id }}" data-section-type="featured-collection">
   {% if section.settings.title != blank %}
     <h2 class="featured-collection__title">{{ section.settings.title | escape }}</h2>
   {% endif %}
 
   {%- assign collection = collections[section.settings.collection] -%}
 
-  <div class="featured-collection__carousel">
+  <div class="featured-collection__carousel" data-element="carousel">
     {% for product in collection.products limit: 4 %}
       <a href="{{ product.url | within: collection }}" class="featured-collection__item">
         {% if product.featured_image != blank %}

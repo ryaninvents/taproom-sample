@@ -1,7 +1,10 @@
+@import '../variables.scss';
+
 .featured-collection {
   display: flex;
   flex-wrap: wrap;
   max-width: $grid-max-width;
+  overflow-x: hidden;
 }
 
 .featured-collection__item {

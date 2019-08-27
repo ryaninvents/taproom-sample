@@ -15,7 +15,8 @@
     "no-new": 0,
     "node/shebang": 0,
     "import/no-extraneous-dependencies": "off",
-    "require-await": "off"
+    "require-await": "off",
+    "no-empty-function": "off"
   },
   "globals": {
     "document": true,
