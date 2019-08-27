@@ -1,3 +1,10 @@
+# [1.5.0](https://github.com/ryaninvents/taproom-sample/compare/v1.4.0...v1.5.0) (2019-08-27)
+
+
+### Features
+
+* start work on collection feature ([045baf1](https://github.com/ryaninvents/taproom-sample/commit/045baf1))
+
 # [1.4.0](https://github.com/ryaninvents/taproom-sample/compare/v1.3.1...v1.4.0) (2019-08-24)
 
 
