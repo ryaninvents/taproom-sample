@@ -25,7 +25,10 @@ module.exports = async ({config, mode}) => {
   } else {
     newRules = webpackDev.module.rules.filter(isCssRule);
   }
-  config.module.rules = [...config.module.rules, ...newRules];
+  config.module.rules = [
+    ...config.module.rules,
+    ...newRules
+  ];
   config.module.rules.forEach((rule, index) => {
     applyBabelrcIfAppropriate(rule);
   });
