@@ -22,6 +22,7 @@
     --color-light-gray: {{ settings.color_accent_light_gray }};
     --color-light: {{ settings.color_off_white }};
     --color-dark: {{ settings.color_tertiary }};
+    --color-scrim: {{ settings.color_tertiary | color_modify: 'alpha', 0.75 }};
 
     --font-heading: {{ settings.font_heading.family }}, {{ settings.font_heading.fallback_families }};
     --font-heading-weight: {{ settings.font_heading.weight | default: '400' }};
