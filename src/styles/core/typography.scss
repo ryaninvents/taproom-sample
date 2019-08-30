@@ -30,6 +30,7 @@ select {
 a {
   color: var(--color-primary);
   text-decoration: none;
+  transition: color 200ms;
 
   &:hover, &:focus {
     text-decoration: underline;

@@ -16,7 +16,10 @@
     "node/shebang": 0,
     "import/no-extraneous-dependencies": "off",
     "require-await": "off",
-    "no-empty-function": "off"
+    "no-empty-function": "off",
+    "id-length": "off",
+    "func-style": "off",
+    "no-warning-comments": "warn"
   },
   "globals": {
     "document": true,
