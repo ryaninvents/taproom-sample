@@ -1,3 +1,10 @@
+# [1.7.0](https://github.com/ryaninvents/taproom-sample/compare/v1.6.0...v1.7.0) (2019-09-01)
+
+
+### Features
+
+* add Quick View modals ([4438b1f](https://github.com/ryaninvents/taproom-sample/commit/4438b1f))
+
 # [1.6.0](https://github.com/ryaninvents/taproom-sample/compare/v1.5.0...v1.6.0) (2019-08-30)
 
 
