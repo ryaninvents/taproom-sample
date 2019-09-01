@@ -21,6 +21,8 @@ jobs:
             - cypress.json
   build:
     docker: *NodeDocker
+    environment:
+      NODE_ENV: production
     steps:
       - checkout
       - &AttachWorkspaceHere

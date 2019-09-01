@@ -6,7 +6,7 @@ module.exports = {
     ['@semantic-release/release-notes-generator'],
     ['@semantic-release/changelog'],
     ['@semantic-release/git', {
-      assets: ['CHANGELOG.md', 'package.json'],
+      assets: ['CHANGELOG.md', 'package.json', 'home-desktop.png', 'home-mobile.png'],
       // eslint-disable-next-line no-template-curly-in-string
       message: 'chore(release): ${nextRelease.version} \n\n${nextRelease.notes}',
     }],
