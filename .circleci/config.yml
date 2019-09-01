@@ -78,6 +78,10 @@ jobs:
           path: 'home-desktop.png'
       - store_artifacts:
           path: 'home-mobile.png'
+      - persist_to_workspace:
+          root: .
+          paths:
+            - '*.png'
   zip:
     docker: *NodeDocker
     steps:
