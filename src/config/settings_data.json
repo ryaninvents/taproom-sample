@@ -6,7 +6,7 @@
     "color_accent_gray": "#6c7682",
     "color_accent_light_gray": "#e6e9ed",
     "color_off_white": "#f2f5fa",
-    "font_heading": "montserrat_n4",
+    "font_heading": "montserrat_n5",
     "font_body": "montserrat_n4",
     "share_image": "",
     "social_sharing_blog": true,
@@ -38,49 +38,11 @@
     "checkout_button_color": "#197bbd",
     "checkout_error_color": "#e32c2b",
     "sections": {
-      "collection-list": {
-        "type": "collection-list",
-        "blocks": {
-          "collection-list-0": {
-            "type": "collection",
-            "settings": {
-              "collection": ""
-            }
-          },
-          "collection-list-1": {
-            "type": "collection",
-            "settings": {
-              "collection": ""
-            }
-          },
-          "collection-list-2": {
-            "type": "collection",
-            "settings": {
-              "collection": ""
-            }
-          }
-        },
-        "block_order": [
-          "collection-list-0",
-          "collection-list-1",
-          "collection-list-2"
-        ],
-        "settings": {
-          "title": "Collection list"
-        }
-      },
       "featured-collection": {
         "type": "featured-collection",
         "settings": {
-          "title": "Featured collection",
+          "title": "Featured products",
           "collection": "frontpage"
-        }
-      },
-      "featured-product": {
-        "type": "featured-product",
-        "settings": {
-          "product": "",
-          "show_share_buttons": false
         }
       },
       "header": {
@@ -98,7 +60,7 @@
       "footer": {
         "type": "footer",
         "settings": {
-          "footer_linklist": "footer",
+          "footer_linklist": "",
           "show_payment_icons": false
         }
       },
@@ -122,9 +84,7 @@
     },
     "content_for_index": [
       "1566675958301",
-      "collection-list",
-      "featured-collection",
-      "featured-product"
+      "featured-collection"
     ]
   },
   "presets": {
