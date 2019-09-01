@@ -1,3 +1,11 @@
+# [1.8.0](https://github.com/ryaninvents/taproom-sample/compare/v1.7.0...v1.8.0) (2019-09-01)
+
+
+### Features
+
+* add "facade" message to product page ([8b797b5](https://github.com/ryaninvents/taproom-sample/commit/8b797b5))
+* clean up footer ([5bb120e](https://github.com/ryaninvents/taproom-sample/commit/5bb120e))
+
 # [1.7.0](https://github.com/ryaninvents/taproom-sample/compare/v1.6.0...v1.7.0) (2019-09-01)
 
 
