@@ -6,6 +6,10 @@ context('Homepage', () => {
   });
 
   context('desktop', () => {
+    beforeEach(() => {
+      // Match "Homepage" art board on Figma
+      cy.viewport(1600, 1617);
+    });
     it('allow homepage to load', () => {
       cy.screenshot('home-desktop', {capture: 'viewport'});
     });
@@ -13,7 +17,8 @@ context('Homepage', () => {
 
   context('mobile', () => {
     beforeEach(() => {
-      cy.viewport('iphone-6+');
+      // Match "Homepage - Mobile" art board on Figma
+      cy.viewport(375, 1286);
     });
     it('allow homepage to load', () => {
       cy.screenshot('home-mobile', {capture: 'viewport'});
