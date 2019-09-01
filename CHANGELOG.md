@@ -1,3 +1,10 @@
+# [1.9.0](https://github.com/ryaninvents/taproom-sample/compare/v1.8.0...v1.9.0) (2019-09-01)
+
+
+### Features
+
+* permit add to cart ([7f9408b](https://github.com/ryaninvents/taproom-sample/commit/7f9408b))
+
 # [1.8.0](https://github.com/ryaninvents/taproom-sample/compare/v1.7.0...v1.8.0) (2019-09-01)
 
 
