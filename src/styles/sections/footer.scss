@@ -1,0 +1,15 @@
+.footer {
+  padding: 1rem;
+  margin-top: 2rem;
+  font-size: 1rem;
+  text-align: center;
+
+  color: var(--color-light);
+  background-color: var(--color-dark);
+}
+
+.footer__social {
+  &:empty {
+    display: none;
+  }
+}

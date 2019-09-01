@@ -1,23 +1,23 @@
-<footer>
+<footer class="footer">
 
   {%- assign social_accounts = 'Facebook, Twitter, Pinterest, Instagram, Snapchat, Tumblr, YouTube, Vimeo,' | split: ', ' -%}
-  <ul>
-    {% for social in social_accounts %}
+  {%- if social_accounts.size != 0 -%}
+  <ul class="footer__social">
+    {%- for social in social_accounts -%}
       {%- assign social_handle = social | handleize -%}
-      {% capture social_link %}social_{{ social_handle }}_link{% endcapture %}
-      {% capture social_icon %}icon-{{ social_handle }}{% endcapture %}
-
-      {% if settings[social_link] != blank %}
+      {%- capture social_link %}social_{{ social_handle }}_link{%- endcapture -%}
+      {%- capture social_icon %}icon-{{ social_handle }}{%- endcapture -%}
+      {%- if settings[social_link] != blank -%}
         <li>
           <a href="{{ settings[social_link] }}" title="{{ 'layout.footer.social_platform' | t: name: shop.name, platform: social }}">
             {% include social_icon %}
             <span class="icon-fallback-text">{{ social }}</span>
           </a>
         </li>
-      {% endif %}
-
-    {% endfor %}
+      {%- endif -%}
+    {%- endfor -%}
   </ul>
+  {%- endif -%}
 
   {% if section.settings.show_payment_icons %}
     {% unless shop.enabled_payment_types == empty %}
@@ -34,7 +34,7 @@
 
   {%- assign footer_linklist = section.settings.footer_linklist -%}
   {% if linklists[footer_linklist].links.size > 0 %}
-    <ul>
+    <ul class="footer__linklist">
       {% for link in linklists[footer_linklist].links %}
         <li><a href="{{ link.url }}">{{ link.title }}</a></li>
       {% endfor %}
