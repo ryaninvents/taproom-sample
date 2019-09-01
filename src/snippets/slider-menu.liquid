@@ -1,0 +1,17 @@
+<div class="slider-menu" style="display: none;">
+  {%- for childlink in link.links -%}
+    <a href="{{ childlink.url }}" class="slider-menu__header slider-menu__header--{{ childlink.object.products | size | minus: 1 | divided_by: 4 | plus: 1 }}">
+      {% comment %} {{ childlink.title }} {% endcomment %}
+      Label
+    </a>
+
+    {%- if childlink.type == 'collection_link' -%}
+      {%- include 'submenu-collection', collection: childlink.object -%}
+    {%- endif -%}
+  {%- endfor -%}
+  <div class="slider-menu__feat-img" style="background-image: url('{{ section.settings.menu_featured_image | img_url: '256x256' }}');">
+    <button class="btn btn--primary">
+      {{ section.settings.menu_feature_button_text }}
+    </button>
+  </div>
+</div>

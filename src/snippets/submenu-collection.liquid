@@ -1,0 +1,6 @@
+{%- for product in collection.products limit: 8 -%}
+  <a href="{{ product.url | within: collection }}" class="slider-menu__subitem">
+    {% comment %}{{ product.title | escape }}{% endcomment %}
+    Subcategory Name
+  </a>
+{%- endfor -%}

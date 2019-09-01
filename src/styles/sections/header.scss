@@ -1,7 +1,12 @@
 @import '../variables';
 @import '../tools/mixins';
+@import './NavMenu';
+@import '../../scripts/util/Button';
 
 .header {
+  z-index: 2;
+  position: relative;
+
   display: flex;
   flex-flow: column nowrap;
   font-size: $text-base;
@@ -9,17 +14,19 @@
 
 .header a {
   color: var(--color-body-text);
+  font-weight: 500;
 }
 
 .header__banner {
-  background-color: var(--color-light);
-  color: var(--color-dark);
+  background-color: white;
+  box-shadow: 0 1px 0 var(--color-shadow-navbar);
+  color: var(--color-body-text);
   display: flex;
   flex-flow: row nowrap;
   align-items: center;
   justify-content: space-between;
 
-  padding: $space-5 $space-6;
+  padding: 1.25rem 3.75rem;
 
   h1, .h1 {
     margin: 0;
@@ -70,4 +77,100 @@
 
 .header__action-button {
   @include button-link;
+}
+
+.slider-menu {
+  z-index: -1;
+  position: absolute;
+  top: 100%;
+  left: 3.75rem;
+  right: 3.75rem;
+  background-color: white;
+
+  padding: 2rem 3.75rem;
+
+  box-shadow: 0 1px 0 var(--color-light-gray), -1px 0 0 var(--color-light-gray), 1px 0 0 var(--color-light-gray), 0 -1px 0 var(--color-light-gray);
+  border-radius: 0 0 2px 2px;
+
+  @media screen and (min-width: 800px) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr)) [end];
+    grid-auto-flow: row;
+  }
+  
+  @media screen and (min-width: 1300px) {
+    display: grid;
+    grid-template-rows: [start] 1fr repeat(4, 2em) [end];
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(min-content, 1fr);
+    grid-column-gap: 0.5rem;
+    grid-row-gap: 0.5rem;
+    justify-content: center;
+  }
+}
+
+.slider-menu__header {
+  border-bottom: 1px solid var(--color-border);
+  margin: 1rem 1.5rem;
+  
+  font-size: 1.1875rem;
+  padding-bottom: 0.375rem;
+  
+  @media screen and (min-width: 800px) {
+    grid-column: 1;
+  }
+  
+  @media screen and (min-width: 1300px) {
+    margin: 0 1.5rem 1rem;
+    grid-row: 1;
+    grid-column: auto;
+  }
+}
+
+.slider-menu__header--2 {
+  @media screen and (min-width: 1300px) {
+    grid-column: span 2;
+  }
+}
+
+a.slider-menu__subitem {
+  font-size: 0.875rem;
+  margin: 1rem 1.5rem;
+  color: var(--color-nav-link);
+  white-space: nowrap;
+  
+  @media screen and (min-width: 1300px) {
+    margin: 0 1.5rem;
+    padding: 0;
+  }
+}
+
+.slider-menu__header + .slider-menu__subitem {
+  @media screen and (min-width: 800px) and (max-width: 1299px) {
+    grid-column: 1;
+  }
+}
+
+.slider-menu__feat-img {
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  align-self: stretch;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 10rem;
+  padding: 2rem;
+
+  grid-column: 1 / end;
+
+  @media screen and (min-width: 1300px) {
+    grid-column: auto;
+    grid-row: start / end;
+  }
+
+  .btn {
+    font-size: 1rem;
+    padding: 1rem;
+  }
 }

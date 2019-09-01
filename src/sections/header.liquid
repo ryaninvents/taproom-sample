@@ -53,15 +53,7 @@
                 {{ link.title }}
                 {% include 'icon-arrow-down' %}
               </a>
-              <ul style="display:none;">
-                {%- for childlink in link.links -%}
-                  <li>
-                    <a href="{{ childlink.url }}">
-                      {{ childlink.title }}
-                    </a>
-                  </li>
-                {%- endfor -%}
-              </ul>
+              {%- include 'slider-menu' -%}
             </li>
           {%- else -%}
             <li class="header__nav-item">
@@ -200,6 +192,17 @@
         "id": "menu",
         "label": "Menu",
         "default": "main-menu"
+      },
+      {
+        "type": "image_picker",
+        "id": "menu_featured_image",
+        "label": "Featured image in menu"
+      },
+      {
+        "type": "text",
+        "id": "menu_feature_button_text",
+        "label": "Button text over featured menu image",
+        "default": "Shop Men's"
       }
     ]
   }
