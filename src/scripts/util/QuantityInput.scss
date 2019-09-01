@@ -1,0 +1,41 @@
+@import '../../styles/variables';
+
+.qty-input {
+  display: inline-flex;
+  flex-flow: row nowrap;
+  align-items: stretch;
+  font-style: italic;
+}
+
+.qty-input__button {
+  border: 1px solid var(--color-light-gray);
+  background-color: var(--color-light);
+  color: var(--color-body-text);
+  border-radius: 0;
+  font-size: 1rem;
+  padding: 0.6875rem 1.1875rem;
+  font-family: var(--font-body);
+  cursor: pointer;
+  transition: background-color 200ms, color 200ms, border-color 200ms;
+
+  &:hover {
+    color: var(--color-light);
+    background-color: var(--color-dark);
+    border-color: var(--color-dark);
+  }
+}
+
+.qty-input__input {
+  border: 1px solid var(--color-light-gray);
+  border-left-width: 0;
+  border-right-width: 0;
+  font-size: 0.75rem;
+  font-style: italic;
+  font-family: var(--font-body);
+  text-align: center;
+  max-width: 8ch;
+
+  // Montserrat doesn't support tabular nums 😕
+  // Request them anyways to improve appearance for fonts that do.
+  font-variant-numeric: tabular-nums;
+}

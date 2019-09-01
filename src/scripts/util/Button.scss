@@ -1,0 +1,12 @@
+.btn {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  border: 0;
+
+  padding: 1rem;
+}
+
+.btn--primary {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+}

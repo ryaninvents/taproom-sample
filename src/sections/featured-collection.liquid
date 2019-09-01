@@ -18,7 +18,10 @@
   <div class="featured-collection__carousel" data-element="carousel">
     {% for product in collection.products limit: 4 %}
       <a href="{{ product.url | within: collection }}" class="featured-collection__item" data-element="carousel__item">
-        {% if product.featured_image != blank %}
+        <template type="application/json" data-role="product-data">
+          {{- product | json -}}
+        </template>
+        {%- if product.featured_image != blank %}
           <div class="featured-collection__image">
             {% include 'responsive-image' with
               image: product.featured_image,
@@ -70,7 +73,7 @@
       {% endfor %}
     {% endfor %}
   </div>
-  <template type="application/json" data-role="product-data">
+  <template type="application/json" data-role="all-product-data">
   {{ collection.products | json }}
   </template>
 </section>

@@ -1,4 +1,12 @@
 {
   "presets": ["shopify/web"],
-  "plugins": ["transform-async-to-generator"]
+  "plugins": [
+    "transform-async-to-generator",
+    [
+      "transform-react-jsx",
+      {
+        "pragma": "h"
+      }
+    ]
+  ]
 }

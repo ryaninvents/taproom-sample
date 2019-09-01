@@ -3,6 +3,9 @@
 // gives the final product that extra zing and dimension. It's my one vice.
 import {spring, styler, listen, pointer, value} from 'popmotion';
 
+import {formatMoney as money} from '@shopify/theme-currency';
+import {quickViewAll} from './quick-view';
+
 import h from '../util/createElement';
 
 import '../../styles/sections/featured-collection.scss';
@@ -10,12 +13,6 @@ import '../../styles/sections/featured-collection.scss';
 /** Maximum distance you can slide the carousel before it changes pages. */
 const MAX_DISPLACEMENT = 100;
 
-// TODO: this is for rapid dev only; move to Shopify money functions
-function money(amount) {
-  return `$${(amount / 100).toFixed(2)}`;
-}
-
-// TODO: this is for rapid dev only; move to Shopify money functions
 function fromMoney(amount) {
   return `from ${money(amount)}`;
 }
@@ -70,6 +67,8 @@ function featuredCollection(baseElement) {
 
   let activePointer = null;
   let pageDelta = 0;
+
+  quickViewAll(baseElement);
 
   const reportPosition = (position) => {
     let newPageDelta = pageDelta;

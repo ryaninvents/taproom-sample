@@ -1,10 +1,17 @@
 {
   "extends": [
     "plugin:shopify/esnext",
-    "plugin:shopify/jquery"
+    "plugin:shopify/jquery",
+    "plugin:react/recommended"
   ],
+  "plugins": ["react"],
   "env": {
     "jest": true
+  },
+  "settings": {
+    "react": {
+      "pragma": "h"
+    }
   },
   "rules": {
     "babel/no-invalid-this": 0,
@@ -19,7 +26,10 @@
     "no-empty-function": "off",
     "id-length": "off",
     "func-style": "off",
-    "no-warning-comments": "warn"
+    "no-warning-comments": "warn",
+    "react/prop-types": "off",
+    "react/no-unknown-property": ["error", {"ignore": ["class"]}],
+    "no-undefined": "off"
   },
   "globals": {
     "document": true,
