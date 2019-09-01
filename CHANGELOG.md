@@ -1,3 +1,10 @@
+# [1.10.0](https://github.com/ryaninvents/taproom-sample/compare/v1.9.0...v1.10.0) (2019-09-01)
+
+
+### Features
+
+* lay out mega menu ([315bdc6](https://github.com/ryaninvents/taproom-sample/commit/315bdc6))
+
 # [1.9.0](https://github.com/ryaninvents/taproom-sample/compare/v1.8.0...v1.9.0) (2019-09-01)
 
 
