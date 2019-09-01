@@ -201,7 +201,7 @@ export default function quickView(baseElement, opts) {
   const container = document.createElement('div');
 
   // Preload the image for instant availability when the modal opens.
-  (new window.Image()).src = opts.imageSrc;
+  window.setTimeout(() => { (new window.Image()).src = opts.imageSrc; }, 2e3);
 
   render(<QuickView dialogIntentBus={dialogIntentBus} {...opts} />, container);
   document.body.appendChild(container);
