@@ -1,3 +1,16 @@
+## [1.10.1](https://github.com/ryaninvents/taproom-sample/compare/v1.10.0...v1.10.1) (2019-09-01)
+
+
+### Bug Fixes
+
+* correct header icon spacing ([9edf55c](https://github.com/ryaninvents/taproom-sample/commit/9edf55c))
+* progress towards mobile styles ([3e96b7e](https://github.com/ryaninvents/taproom-sample/commit/3e96b7e))
+
+
+### Performance Improvements
+
+* delay offscreen image loads ([bb3ca3e](https://github.com/ryaninvents/taproom-sample/commit/bb3ca3e))
+
 # [1.10.0](https://github.com/ryaninvents/taproom-sample/compare/v1.9.0...v1.10.0) (2019-09-01)
 
 
