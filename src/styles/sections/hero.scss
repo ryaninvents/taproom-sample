@@ -1,13 +1,37 @@
 @import '../variables';
 
 .hero__overlay {
+  position: relative;
   height: 100%;
   display: flex;
   flex-flow: column nowrap;
   align-items: start;
-  justify-content: center;
+  justify-content: flex-end;
   padding-bottom: $space-8;
-  padding-left: 10vw;
+  background-position: left;
+
+  > * {
+    z-index: 10;
+  }
+
+  &::before {
+    content: '';
+    z-index: 0;
+    position: absolute;
+    top: 0; bottom: 0; left: 0; right: 0;
+    background-color: rgba(0, 0, 0, 0.2);
+    transition: background-color 200ms;
+    
+    @media screen and (min-width: 768px) {
+      background-color: rgba(0, 0, 0, 0);
+    }
+  }
+  
+  @media screen and (min-width: 768px) {
+    justify-content: center;
+    background-position: center;
+    padding-left: 3rem;
+  }
 }
 
 .hero__inner {
@@ -28,12 +52,21 @@
 }
 
 .hero__mega-title {
-  font-size: 4rem;
-  line-height: 0.9;
+  line-height: 1.25;
   margin-bottom: $space-5;
+  font-size: 2rem;
+  
+  @media screen and (min-width: 768px) {
+    line-height: 0.9;
+    font-size: 4rem;
+  }
 }
 
 .hero__mega-subtitle {
   font-size: $text-lg;
-  line-height: 1.31;
+  line-height: 1.6;
+
+  @media screen and (min-width: 768px) {
+    line-height: 1.31;
+  }
 }

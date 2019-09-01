@@ -44,7 +44,7 @@
       <div class="h1">{{ bannerLogo }}</div>
     {% endif -%}
 
-    <nav role="navigation" class="header__nav">
+    <nav role="navigation" class="header__nav header__nav--banner">
       <ul>
         {%- for link in linklists[section.settings.menu].links -%}
           {%- if link.links != blank -%}
