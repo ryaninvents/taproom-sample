@@ -81,6 +81,13 @@
   }
 }
 
+.quick-view__error {
+  background-color: var(--color-error);
+  color: var(--color-light);
+  font-weight: 700;
+  padding: 1em;
+}
+
 .quick-view__actions {
   display: flex;
   flex-flow: row nowrap;

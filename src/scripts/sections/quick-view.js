@@ -1,13 +1,17 @@
 /* @jsx h */
 import '../../styles/sections/quick-view.scss';
 import {h, render} from 'preact';
-import {useEffect, useState, useMemo, useRef} from 'preact/hooks';
-import {timeline, easing, styler} from 'popmotion';
+import {useEffect, useState} from 'preact/hooks';
+import {timeline, easing} from 'popmotion';
 
 import {formatMoney} from '@shopify/theme-currency';
 
+import * as cart from '@shopify/theme-cart';
+
 import QuantityInput from '../util/QuantityInput';
 import Button from '../util/Button';
+import useStyler from '../util/useStyler';
+import QuantityAttention from '../util/QuantityAttention';
 
 class Bus {
   listeners = [];
@@ -22,7 +26,42 @@ class Bus {
   }
 }
 
-function QuickViewModal({title, vendor = 'Vendor Name', imageSrc, sku = 'SKU-001', price, description, modalRef}) {
+function QuickViewModal({variantId, title, vendor = 'Vendor Name', imageSrc, sku = 'SKU-001', price, description, modalRef}) {
+  const [qty, setQty] = useState(1);
+  const [cartQuantity, setCartQuantity] = useState(null);
+  const [loadState, setLoadState] = useState({
+    done: false,
+    loading: false,
+    error: null,
+  });
+
+  const handleQtyChange = (event) => {
+    setQty(Number(event.target.value));
+  };
+
+  const handleAddToCart = () => {
+    setLoadState((state) => ({
+      ...state,
+      done: false,
+      loading: true,
+    }));
+    cart.addItem(variantId, qty).then((cartResult) => {
+      const matchingItem = cartResult.items.find((item) => item.variant_id === variantId);
+      if (matchingItem) { setCartQuantity(matchingItem.quantity); }
+      setLoadState({
+        done: true,
+        loading: false,
+        error: null,
+      });
+      return null;
+    }).catch(({responseJSON: error = {}}) => {
+      setLoadState({
+        done: true,
+        loading: false,
+        error: error.description || 'Could not add to cart',
+      });
+    });
+  };
 
   // TODO: use flexbox to position an actual image, to get the a11y benefits.
   const productImage = <div class="quick-view__img-wrap" style={{backgroundImage: `url(${JSON.stringify(imageSrc)})`}} />;
@@ -42,22 +81,16 @@ function QuickViewModal({title, vendor = 'Vendor Name', imageSrc, sku = 'SKU-001
         <div class="quick-view__price">{formatMoney(price)}</div>
         <p dangerouslySetInnerHTML={{__html: description}} />
         <hr/>
+        {loadState.error ? <p class="quick-view__error">{loadState.error}</p> : null}
         <div class="quick-view__actions">
-          <QuantityInput class="quick-view__qty" defaultValue={1} />
-          <Button class="quick-view__add-to-cart" variant="primary">Add to Cart</Button>
+          <QuantityInput class="quick-view__qty" defaultValue={qty} onChange={handleQtyChange} />
+          <Button class="quick-view__add-to-cart" variant="primary" disabled={loadState.loading} onClick={handleAddToCart}>
+            Add to Cart <QuantityAttention quantity={cartQuantity} />
+          </Button>
         </div>
       </div>
     </div>
   );
-}
-
-function useStyler() {
-  const ref = useRef(null);
-  const refStyler = useMemo(() => {
-    if (!ref.current) { return null; }
-    return styler(ref.current);
-  }, [ref.current]);
-  return [ref, refStyler];
 }
 
 function useListenerConnection(bus, setState) {
@@ -192,6 +225,7 @@ export function quickViewAll(featuredCollectionSectionElement) {
         description: data.description,
         imageSrc: data.images[0],
         id: data.id,
+        variantId: data.variants[0].id,
       });
       carouselItem.querySelector('.featured-collection__quick-view').addEventListener('click', (event) => {
         event.preventDefault();
