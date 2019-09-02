@@ -70,3 +70,14 @@
   /* stylelint-disable declaration-no-important */
   display: none !important;
 }
+
+@media screen and (max-width: 767px) {
+  .d-sm-none {
+    display: none !important;
+  }
+}
+@media screen and (min-width: 768px) {
+  .d-md-none {
+    display: none !important;
+  }
+}

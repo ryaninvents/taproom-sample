@@ -67,15 +67,17 @@
     </nav>
 
     <div class="header__right-actions">
-      <button class="header__action-button">
+      <button class="header__action-button d-sm-none">
         {%- include 'icon-search' -%}
-      </button><button class="header__action-button">
+      </button><button class="header__action-button d-sm-none">
         {%- include 'icon-fave' -%}
       </button><a href="/cart" class="header__action-button">
         {%- include 'icon-cart' -%}
         <!-- {{ 'layout.cart.title' | t }}
         ({{ cart.item_count }} {{ 'layout.cart.items_count' | t: count: cart.item_count }}) -->
-      </a>
+      </a><button class="header__action-button d-md-none">
+        {%- include 'icon-hamburger' -%}
+      </button>
     </div>
 
     {% if shop.customer_accounts_enabled %}

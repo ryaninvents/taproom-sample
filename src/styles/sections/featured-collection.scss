@@ -25,6 +25,10 @@
   flex-basis: 100%;
   text-align: center;
   font-weight: var(--font-heading-weight);
+
+  @media screen and (max-width: 767px) {
+    font-size: (25rem / 16);
+  }
 }
 
 .featured-collection__carousel {
