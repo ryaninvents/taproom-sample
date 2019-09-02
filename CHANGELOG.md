@@ -1,3 +1,10 @@
+## [1.11.4](https://github.com/ryaninvents/taproom-sample/compare/v1.11.3...v1.11.4) (2019-09-02)
+
+
+### Bug Fixes
+
+* use mega-menu layout across broader range of screen sizes ([516f537](https://github.com/ryaninvents/taproom-sample/commit/516f537))
+
 ## [1.11.3](https://github.com/ryaninvents/taproom-sample/compare/v1.11.2...v1.11.3) (2019-09-02)
 
 
