@@ -7,11 +7,13 @@ context('Homepage', () => {
 
   context('desktop', () => {
     beforeEach(() => {
-      // Match "Homepage" art board on Figma
+      // Match "Homepage" art board on Figma.
+      // Note that due to Cypress limitations, final image wlil be 1280px wide.
+      // @see https://github.com/cypress-io/cypress/issues/2102
       cy.viewport(1600, 1617);
     });
     it('allow homepage to load', () => {
-      cy.screenshot('home-desktop', {capture: 'viewport'});
+      cy.screenshot('home-desktop', {capture: 'fullPage'});
     });
   });
 
@@ -21,7 +23,7 @@ context('Homepage', () => {
       cy.viewport(375, 1286);
     });
     it('allow homepage to load', () => {
-      cy.screenshot('home-mobile', {capture: 'viewport'});
+      cy.screenshot('home-mobile', {capture: 'fullPage'});
     });
   });
 });
