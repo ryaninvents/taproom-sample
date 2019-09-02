@@ -1,3 +1,10 @@
+# [1.11.0](https://github.com/ryaninvents/taproom-sample/compare/v1.10.1...v1.11.0) (2019-09-02)
+
+
+### Features
+
+* open mega-menu on mouseover ([2e350eb](https://github.com/ryaninvents/taproom-sample/commit/2e350eb))
+
 ## [1.10.1](https://github.com/ryaninvents/taproom-sample/compare/v1.10.0...v1.10.1) (2019-09-01)
 
 
