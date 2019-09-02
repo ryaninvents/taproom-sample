@@ -16,7 +16,7 @@ context('Homepage', () => {
       cy.screenshot('home-desktop', {capture: 'fullPage'});
     });
     it('should display mega-menu', () => {
-      cy.get('.header__nav-menu-link')
+      cy.get('.header__nav-menu-link[href="/collections"]')
         .trigger('mouseover');
       cy.get('.slider-menu').should('be.visible');
       cy.screenshot('home-mega-menu');
