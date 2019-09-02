@@ -4,7 +4,7 @@
 @import '../../scripts/util/Button';
 
 .header {
-  z-index: 2;
+  z-index: 20;
   position: relative;
 
   display: flex;
@@ -92,7 +92,7 @@
 }
 
 .slider-menu {
-  z-index: -1;
+  z-index: 19;
   position: absolute;
   top: 100%;
   left: 3.75rem;

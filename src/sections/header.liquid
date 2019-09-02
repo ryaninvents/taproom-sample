@@ -49,7 +49,7 @@
         {%- for link in linklists[section.settings.menu].links -%}
           {%- if link.links != blank -%}
             <li class="header__nav-item header__nav-menu">
-              <a href="{{ link.url }}">
+              <a class="header__nav-menu-link" href="{{ link.url }}">
                 {{ link.title }}
                 {% include 'icon-arrow-down' %}
               </a>
@@ -57,7 +57,7 @@
             </li>
           {%- else -%}
             <li class="header__nav-item">
-              <a href="{{ link.url }}">
+              <a class="header__nav-menu-link" href="{{ link.url }}">
                 {{ link.title }}
               </a>
             </li>
