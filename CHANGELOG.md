@@ -1,3 +1,10 @@
+## [1.11.2](https://github.com/ryaninvents/taproom-sample/compare/v1.11.1...v1.11.2) (2019-09-02)
+
+
+### Bug Fixes
+
+* improve mega-menu header underlines ([8741d66](https://github.com/ryaninvents/taproom-sample/commit/8741d66))
+
 ## [1.11.1](https://github.com/ryaninvents/taproom-sample/compare/v1.11.0...v1.11.1) (2019-09-02)
 
 
