@@ -1,3 +1,10 @@
+## [1.11.3](https://github.com/ryaninvents/taproom-sample/compare/v1.11.2...v1.11.3) (2019-09-02)
+
+
+### Bug Fixes
+
+* use mega menu layout at middle sizes ([65e8c87](https://github.com/ryaninvents/taproom-sample/commit/65e8c87))
+
 ## [1.11.2](https://github.com/ryaninvents/taproom-sample/compare/v1.11.1...v1.11.2) (2019-09-02)
 
 
