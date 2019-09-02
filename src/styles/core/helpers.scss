@@ -71,12 +71,12 @@
   display: none !important;
 }
 
-@media screen and (max-width: 767px) {
+@media screen and (max-width: 999px) {
   .d-sm-none {
     display: none !important;
   }
 }
-@media screen and (min-width: 768px) {
+@media screen and (min-width: 1000px) {
   .d-md-none {
     display: none !important;
   }

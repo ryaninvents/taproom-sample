@@ -7,10 +7,14 @@
 $xl-menu-breakpoint: 1300px;
 
 // Breakpoint above which we get "close enough" to the Figma mockups,
-// while modifying slightly to conserve screen space
+// while modifying slightly to conserve screen space.
+// Between here and `mobile` we switch to an alternate left-to-right layout
+// which I'm not completely satisfied with -- in a real project I'd discuss
+// possible solutions with the designer.
 $mega-menu-breakpoint: 1150px;
 
-$midsize-menu-breakpoint: 768px;
+// Breakpoint below which we use alternate mobile navigation
+$mobile-menu-breakpoint: 1000px;
 
 .header {
   z-index: 20;
@@ -38,11 +42,6 @@ $midsize-menu-breakpoint: 768px;
   
   h1, .h1 {
     margin: 0;
-  }
-  
-  @media screen and (max-width: ($midsize-menu-breakpoint - 1)) {
-    height: 4rem;
-    padding: 1.25rem;
   }
 }
 
@@ -76,7 +75,7 @@ $midsize-menu-breakpoint: 768px;
 
 .header__nav--banner {
   display: block;
-  @media screen and (max-width: ($midsize-menu-breakpoint - 1)) {
+  @media screen and (max-width: ($mobile-menu-breakpoint - 1)) {
     display: none;
   }
 }
@@ -109,6 +108,8 @@ $midsize-menu-breakpoint: 768px;
   background-color: white;
   grid-column-gap: 0;
 
+  padding: 1rem 2rem;
+
   box-shadow: 0 1px 0 var(--color-light-gray), -1px 0 0 var(--color-light-gray), 1px 0 0 var(--color-light-gray), 0 -1px 0 var(--color-light-gray);
   border-radius: 0 0 2px 2px;
 
@@ -129,9 +130,10 @@ $midsize-menu-breakpoint: 768px;
   }
 
   @media screen and (min-width: $xl-menu-breakpoint) {
-    padding: 2rem 3.75rem;
     left: 3.75rem;
     right: 3.75rem;
+
+    padding: 2rem 3.75rem;
   }
 }
 
@@ -172,7 +174,7 @@ a.slider-menu__subitem {
 }
 
 .slider-menu__header + .slider-menu__subitem {
-  @media screen and (min-width: $midsize-menu-breakpoint) and (max-width: ($mega-menu-breakpoint - 1)) {
+  @media screen and (max-width: ($mega-menu-breakpoint - 1)) {
     grid-column: 1;
   }
 }
