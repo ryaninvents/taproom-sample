@@ -15,6 +15,12 @@ context('Homepage', () => {
     it('allow homepage to load', () => {
       cy.screenshot('home-desktop', {capture: 'fullPage'});
     });
+    it('should display mega-menu', () => {
+      cy.get('.header__nav-menu-link')
+        .trigger('mouseover');
+      cy.get('.slider-menu').should('be.visible');
+      cy.screenshot('home-mega-menu');
+    });
   });
 
   context('mobile', () => {

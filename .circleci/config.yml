@@ -78,6 +78,8 @@ jobs:
           path: 'home-desktop.png'
       - store_artifacts:
           path: 'home-mobile.png'
+      - store_artifacts:
+          path: 'home-mega-menu.png'
       - persist_to_workspace:
           root: .
           paths:
