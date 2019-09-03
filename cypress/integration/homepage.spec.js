@@ -36,7 +36,7 @@ context('Homepage', () => {
       cy.viewport(375, 647);
       cy.get('[data-element="mobile-menu-open"]').click();
       cy.get('.mobile-menu').should('be.visible');
-      cy.screenshot('home-mobile-menu');
+      cy.screenshot('home-mobile-menu', {capture: 'viewport'});
     });
   });
 });
