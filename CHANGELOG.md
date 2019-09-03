@@ -1,3 +1,10 @@
+# [1.13.0](https://github.com/ryaninvents/taproom-sample/compare/v1.12.0...v1.13.0) (2019-09-03)
+
+
+### Features
+
+* finish implementing mobile menu ([88b5788](https://github.com/ryaninvents/taproom-sample/commit/88b5788))
+
 # [1.12.0](https://github.com/ryaninvents/taproom-sample/compare/v1.11.4...v1.12.0) (2019-09-03)
 
 
