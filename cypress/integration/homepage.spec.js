@@ -31,5 +31,12 @@ context('Homepage', () => {
     it('allow homepage to load', () => {
       cy.screenshot('home-mobile', {capture: 'fullPage'});
     });
+    it('should display mobile menu', () => {
+      // Match "Mobile Dropdown - Right" art board on Figma
+      cy.viewport(375, 647);
+      cy.get('[data-element="mobile-menu-open"]').click();
+      cy.get('.mobile-menu').should('be.visible');
+      cy.screenshot('home-mobile-menu');
+    });
   });
 });
