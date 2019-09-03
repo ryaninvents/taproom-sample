@@ -1,3 +1,15 @@
+# [1.12.0](https://github.com/ryaninvents/taproom-sample/compare/v1.11.4...v1.12.0) (2019-09-03)
+
+
+### Bug Fixes
+
+* improve icon bounds ([a9e83ce](https://github.com/ryaninvents/taproom-sample/commit/a9e83ce))
+
+
+### Features
+
+* start working on MobileHeader ([c8edd3d](https://github.com/ryaninvents/taproom-sample/commit/c8edd3d))
+
 ## [1.11.4](https://github.com/ryaninvents/taproom-sample/compare/v1.11.3...v1.11.4) (2019-09-02)
 
 
