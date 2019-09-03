@@ -1,3 +1,10 @@
+# [1.14.0](https://github.com/ryaninvents/taproom-sample/compare/v1.13.0...v1.14.0) (2019-09-03)
+
+
+### Features
+
+* implement carousel using scroll-snap ([04f0826](https://github.com/ryaninvents/taproom-sample/commit/04f0826))
+
 # [1.13.0](https://github.com/ryaninvents/taproom-sample/compare/v1.12.0...v1.13.0) (2019-09-03)
 
 
