@@ -1,0 +1,145 @@
+@import '../variables';
+@import '../tools/mixins';
+
+body.mobile-menu-visible {
+  overflow: hidden;
+}
+
+
+.mobile-menu {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 21;
+  height: 100vh;
+  overflow: auto;
+
+  display: grid;
+  grid-template-rows: min-content 1fr;
+
+  .header__banner {
+    position: relative;
+    border-top: 1px solid #ffffff;
+    padding: 0.5rem 1.5rem;
+
+    // Instead of fighting with z-index, I'm using an invisible overlay with
+    // visible box shadow to get the shadow effect I want.
+    box-shadow: none;
+
+    &::after {
+      content: '';
+      position: absolute;
+      top: 0; bottom: 0; left: 0; right: 0;
+      pointer-events: none;
+      box-shadow: 0 5px 12px var(--color-shadow-navbar);
+    }
+  }
+}
+
+.mobile-link-area {
+  background-color: white;
+  overflow-y: auto;
+  padding: 0 (30rem / 16);
+  font-size: 1rem;
+
+  a {
+    color: var(--color-dark);
+  }
+
+  > ul {
+    > li:first-child {
+      border-top-width: 0;
+    }
+  }
+
+  ul {
+    list-style-type: none;
+    width: 100%;
+    padding-left: 0;
+    margin-top: 0;
+  }
+
+  li:not(:last-child) {
+    border-bottom: 1px solid var(--color-light-gray);
+  }
+
+  li:first-child {
+    border-top: 1px solid var(--color-light-gray);
+  }
+}
+
+.mobile-header {
+  &__nav-link {
+    display: inline-block;
+    margin: 1.5em 0;
+    font-weight: 500;
+  }
+
+  &__nav-item {
+    position: relative;
+  }
+
+  // Use padding to create indent effect. This allows the border between
+  // menu items to be the same length in all rows, without having to resort
+  // to pseudoelements or background-gradient trickery.
+  @for $i from 1 through 3 {
+    &__nav-item--depth-#{$i} a {
+      padding-left: ($i * 1.5rem);
+    }
+  }
+}
+
+/** Small plus/minus icon allowing expand/collapse of mobile menu items. */
+.mobile-expand {
+  position: absolute;
+  top: 0; right: -1rem;
+  color: var(--color-gray);
+  padding: 1.25rem 1.375rem;
+  margin-top: -0.125rem;
+  font-size: 1.5rem;
+  cursor: pointer;
+
+  &--open::before {
+    // Use en-dash since it looks better than a hyphen in this context;
+    // use the Unicode escape sequence here because the en-dash looks
+    // exactly like a hyphen inside a code editor.
+    content: '\2013';
+  }
+  &--closed::before {
+    content: '+';
+  }
+}
+
+/** Dark gray bottom section on mobile menu containing links and actions. */
+.mobile-footer {
+  background-color: var(--color-dark);
+  color: var(--color-light);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  text-align: center;
+  font-size: (14rem / 16);
+  padding: 2.5rem;
+  font-weight: 700;
+  text-transform: uppercase;
+
+  /** Add comfortable spacing between action icons in mobile menu footer. */
+  &-icons > * {
+    margin: 0 0.5em;
+  }
+
+  &-links {
+    margin-top: 2em;
+
+    a {
+      color: var(--color-light);
+      padding: 0.25em 1em;
+
+      &:not(:first-child) {
+        // Small 'pipe' between each link
+        box-shadow: -1px 0 var(--color-gray);
+      }
+    }
+  }
+
+}

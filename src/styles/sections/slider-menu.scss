@@ -1,0 +1,121 @@
+@import '../variables';
+
+/** Mega Menu used on desktop. */
+.slider-menu {
+  z-index: 19;
+  position: absolute;
+  top: 100%;
+  left: 1rem;
+  right: 1rem;
+  background-color: white;
+  grid-column-gap: 0;
+
+  padding: 1rem 2rem;
+
+  box-shadow: 0 1px 0 var(--color-light-gray), -1px 0 0 var(--color-light-gray),
+    1px 0 0 var(--color-light-gray), 0 -1px 0 var(--color-light-gray);
+  border-radius: 0 0 2px 2px;
+
+  // Use alternative layout for middling sizes --
+  // I'd want to chat with a designer about this one! I did my best 😅
+  @media screen and (max-width: ($mega-menu-breakpoint - 1)) {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr)) [end];
+  }
+
+  // Use slightly condensed menu layout at "mega menu" sizes.
+  // Honestly, this one is just so that the Cypress screenshots
+  // (which are capped at 1200px horizontal; see homepage.spec.js)
+  // show the mega-menu in its full glory.
+  @media screen and (min-width: $mega-menu-breakpoint) {
+    grid-template-rows: [start] 1fr repeat(4, 2em) [end];
+    grid-auto-flow: column;
+    grid-auto-columns: minmax(min-content, 1fr);
+    grid-column-gap: 0.5rem;
+    grid-row-gap: 0.5rem;
+    justify-content: center;
+
+    padding: 2rem 2.5rem;
+  }
+
+  // At very large desktop sizes, use padding to match Figma.
+  @media screen and (min-width: $xl-menu-breakpoint) {
+    left: 3.75rem;
+    right: 3.75rem;
+
+    padding: 2rem 3.75rem;
+  }
+
+  /** Column header for mega menu. */
+  &__header {
+    box-shadow: 0 2px 0 var(--color-light-gray);
+    margin: 1rem 1.5rem;
+
+    font-size: 1.1875rem;
+    padding-bottom: 0.375rem;
+
+    @media screen and (max-width: ($mega-menu-breakpoint - 1)) {
+      grid-column: 1;
+    }
+
+    @media screen and (min-width: $mega-menu-breakpoint) {
+      margin: 0 1.5rem 1rem;
+      grid-row: 1;
+      grid-column: auto;
+    }
+  }
+
+  /**
+   * Double-wide mega menu column header.
+   *
+   * We use the magic of Liquid to add the correct classname.
+   */
+  &__header--2 {
+    @media screen and (min-width: $mega-menu-breakpoint) {
+      grid-column: span 2;
+    }
+  }
+
+  &__subitem {
+    font-size: 0.875rem;
+    margin: 1rem 1.5rem;
+    color: var(--color-nav-link);
+    white-space: nowrap;
+
+    @media screen and (min-width: $mega-menu-breakpoint) {
+      margin: 0 1.5rem;
+      padding: 0;
+    }
+  }
+
+  &__header + .slider-menu__subitem {
+    @media screen and (max-width: ($mega-menu-breakpoint - 1)) {
+      grid-column: 1;
+    }
+  }
+
+  &__feat-img {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    align-self: stretch;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 10rem;
+    padding: 2rem;
+
+    grid-column: 1 / end;
+
+    @media screen and (min-width: $mega-menu-breakpoint) {
+      grid-column: auto;
+      grid-row: start / end;
+    }
+
+    .btn {
+      font-size: 1rem;
+      padding: 1rem;
+    }
+  }
+
+}

@@ -59,6 +59,21 @@ $space-5: (5 * $space-1);
 $space-6: (6 * $space-1);
 $space-8: (8 * $space-1);
 
+
+// Breakpoint above which we use the exact styles given in Figma
+$xl-menu-breakpoint: 1300px;
+
+// Breakpoint above which we get "close enough" to the Figma mockups,
+// while modifying slightly to conserve screen space.
+// Between here and `mobile` we switch to an alternate left-to-right layout
+// which I'm not completely satisfied with -- in a real project I'd discuss
+// possible solutions with the designer.
+$mega-menu-breakpoint: 1150px;
+
+// Breakpoint below which we use alternate mobile navigation
+$mobile-menu-breakpoint: 1000px;
+
+
 // Breakpoints used with the media-query mixin
 $small: 'small';
 $medium: 'medium';
