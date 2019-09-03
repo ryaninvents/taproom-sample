@@ -76,7 +76,7 @@ function QuickViewModal({variantId, title, vendor = 'Vendor Name', imageSrc, sku
         <div class="quick-view__sku">
           {sku}
         </div>
-        <h2>{title}</h2>
+        <h2 class="quick-view__h2">{title}</h2>
         <hr/>
         <div class="quick-view__price">{formatMoney(price)}</div>
         <p dangerouslySetInnerHTML={{__html: description}} />

@@ -1,24 +1,6 @@
 @import '../variables';
 
-.quick-view__scrim {
-  background-color: var(--color-scrim);
-  position: fixed;
-  top: 0; bottom: 0;
-  left: 0; right: 0;
-  z-index: -1;
-}
-
-.quick-view__wrapper {
-  position: fixed;
-  top: 0; bottom: 0;
-  left: 0; right: 0;
-  z-index: 30;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
+/** Represents the quick-view modal. */
 .quick-view {
   max-width: calc(100vw - 8rem);
   height: calc(100vh - 8rem);
@@ -30,93 +12,121 @@
 
   font-family: var(--font-body);
 
-  h2 {
+  &__h2 {
     font-size: 2rem;
     color: var(--color-dark);
   }
 
-  h2, .quick-view__price, .quick-view__vendor-name, .quick-view__sku {
+  &__h2, &__price, &__vendor-name, &__sku {
     font-weight: var(--font-heading-weight);
     font-style: italic;
   }
 
-}
+  /** Gray background which obscures page content while modal is active. */
+  &__scrim {
+    background-color: var(--color-scrim);
+    position: fixed;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    z-index: -1;
+  }
 
-.quick-view__img-wrap {
-  position: relative;
-  height: 100%;
-  flex-grow: 1;
-  flex-shrink: 0.1;
-  max-width: calc(100vh - 8rem);
+  /** Container element which positions the scrim and modal. */
+  &__wrapper {
+    position: fixed;
+    top: 0; bottom: 0;
+    left: 0; right: 0;
+    z-index: 30;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
 
-  overflow: hidden;
-  padding-left: 40vw;
+  /** Displays the product image using CSS background-image. */
+  &__img-wrap {
+    position: relative;
+    height: 100%;
+    flex-grow: 1;
+    flex-shrink: 0.1;
+    max-width: calc(100vh - 8rem);
 
-  background-size: cover;
-  background-position: center;
-}
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-.quick-view__info {
-  background-color: white;
-  padding: 3rem 3.5rem;
-  color: var(--color-gray);
-  overflow-y: auto;
-  max-width: calc(100vh - 8rem);
-  flex-shrink: 1;
+    overflow: hidden;
+    padding-left: 40vw;
 
-  p {
-    font-style: italic;
+    background-size: cover;
+    background-position: center;
+  }
+
+  /** Container for product title and description (right-hand side on desktop). */
+  &__info {
+    background-color: white;
+    padding: 3rem 3.5rem;
+    color: var(--color-gray);
+    overflow-y: auto;
+    max-width: calc(100vh - 8rem);
+    flex-shrink: 1;
+  
+    p {
+      font-style: italic;
+      font-size: 1rem;
+      line-height: 1.375;
+    }
+  
+    hr {
+      height: 0;
+      border-bottom: 1px solid var(--color-border);
+      border-top-width: 0;
+      margin: 2rem 0;
+    }
+  }
+
+  /** Report add-to-cart errors back to the visitor. */
+  &__error {
+    background-color: var(--color-error);
+    color: var(--color-light);
+    font-weight: 700;
+    padding: 1em;
+  }
+
+  /** Container for quantity adjustment + add-to-cart button. */
+  &__actions {
+    display: flex;
+    flex-flow: row nowrap;
+    width: 100%;
+
+    > :not(:first-child) {
+      margin-left: 1em;
+    }
+  }
+
+  /** Adjustments to fit quantity picker in action bar. */
+  &__qty {
+    flex: 1 2;
+  }
+
+  /** Stretching the add-to-cart button. */
+  &__add-to-cart {
+    flex: 3 1;
+  }
+
+  /** Display the vendor name in small heading font size. */
+  &__vendor-name {
+    font-size: 1.1875rem;
+  }
+
+  &__sku {
     font-size: 1rem;
-    line-height: 1.375;
+    color: var(--color-border);
   }
 
-  hr {
-    height: 0;
-    border-bottom: 1px solid var(--color-border);
-    border-top-width: 0;
-    margin: 2rem 0;
+  &__price {
+    font-size: 1.5rem;
+    margin: 1.5rem 0;
   }
-}
 
-.quick-view__error {
-  background-color: var(--color-error);
-  color: var(--color-light);
-  font-weight: 700;
-  padding: 1em;
-}
-
-.quick-view__actions {
-  display: flex;
-  flex-flow: row nowrap;
-  width: 100%;
-
-  > :not(:first-child) {
-    margin-left: 1em;
-  }
-}
-
-.quick-view__qty {
-  flex: 1 2;
-}
-
-.quick-view__add-to-cart {
-  flex: 3 1;
-}
-
-.quick-view__vendor-name {
-  font-size: 1.1875rem;
-}
-
-.quick-view__sku {
-  font-size: 1rem;
-  color: var(--color-border);
-}
-
-.quick-view__price {
-  font-size: 1.5rem;
-  margin: 1.5rem 0;
 }
