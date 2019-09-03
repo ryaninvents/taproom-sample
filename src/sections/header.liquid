@@ -12,7 +12,7 @@
 {%- endcomment -%}
 <section data-section-id="{{ section.id }}" data-section-type="header" class="header">
   {%- if section.settings.announcement_bar_enabled -%}
-    <div class="header__announce">
+    <div class="header__announce d-sm-none">
       {%- if section.settings.announcement_bar_home_page_only == false or template.name == 'index' -%}
         {%- if section.settings.announcement_bar_link != blank -%}
           <a href="{{ section.settings.announcement_bar_link }}">
@@ -75,7 +75,7 @@
         {%- include 'icon-cart' -%}
         <!-- {{ 'layout.cart.title' | t }}
         ({{ cart.item_count }} {{ 'layout.cart.items_count' | t: count: cart.item_count }}) -->
-      </a><button class="header__action-button d-md-none">
+      </a><button class="header__action-button d-md-none" data-element="mobile-menu-open">
         {%- include 'icon-hamburger' -%}
       </button>
     </div>
@@ -126,6 +126,41 @@
     </form>
   </header>
 </section>
+
+
+<script>
+window.BRAND_ICON = {{ section.settings.logo | img_url: image_size | json }};
+// Unfortunately we need to collect list items in a messy way since linklists don't
+// support the `| json` Liquid filter. Here we go...
+window.MAIN_LINK_LIST = [
+{%- for link in linklists[section.settings.menu].links -%}
+  {
+    title: {{ link.title | json }},
+    url: {{ link.url | json }},
+    {%- if link.links != blank -%}
+    children: [
+      {%- for sublink in link.links -%}
+      {
+        url: {{ sublink.url | json }},
+        title: {{ sublink.title | json }},
+        {%- if sublink.type == 'collection_link' -%}
+        children: [
+          {%- for product in sublink.object.products limit: 8 -%}
+          {
+            title: {{ product.title | escape | json }},
+            url: {{ product.url | within: sublink.object | json }},
+          },
+          {%- endfor -%}
+        ]
+        {%- endif -%}
+      },
+      {%- endfor -%}
+    ]
+    {%- endif -%}
+  },
+{%- endfor -%}
+];
+</script>
 
 {% if section.settings.logo != blank %}
   <style>

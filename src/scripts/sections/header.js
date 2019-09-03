@@ -1,3 +1,6 @@
+import {h, render} from 'preact';
+import MobileHeader from './MobileHeader';
+
 let activeMenu = null;
 let activeListener = null;
 
@@ -35,3 +38,17 @@ function openActiveHeader() {
   });
 });
 
+const mobileMenuContainer = document.createElement('div');
+document.body.appendChild(mobileMenuContainer);
+
+function hideMenu() {
+  render(h(MobileHeader, {logoImage: window.BRAND_ICON, isVisible: false}), mobileMenuContainer);
+}
+
+function showMenu() {
+  render(h(MobileHeader, {logoImage: window.BRAND_ICON, onCloseMenu: hideMenu}), mobileMenuContainer);
+}
+
+document.querySelector('[data-element="mobile-menu-open"]').addEventListener('click', () => {
+  showMenu();
+});
