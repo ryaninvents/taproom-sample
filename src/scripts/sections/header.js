@@ -46,9 +46,7 @@ function hideMenu() {
 }
 
 function showMenu() {
-  render(h(MobileHeader, {logoImage: window.BRAND_ICON, onCloseMenu: hideMenu}), mobileMenuContainer);
+  render(h(MobileHeader, {logoImage: window.BRAND_ICON, onCloseMenu: hideMenu, toggleEl: document.querySelector('[data-element="mobile-menu-open"]')}), mobileMenuContainer);
 }
 
-document.querySelector('[data-element="mobile-menu-open"]').addEventListener('click', () => {
-  showMenu();
-});
+showMenu();
