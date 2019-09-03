@@ -16,7 +16,14 @@
   {%- assign collection = collections[section.settings.collection] -%}
 
   <div class="featured-collection__carousel" data-element="carousel">
-    {% for product in collection.products limit: 4 %}
+    {%- capture collectionFinalIndex -%}{{ collection.products | size | minus: 1 }}{%- endcapture -%}
+    {%- capture collectionFinalModulo -%}{{ collection.products | size | modulo: 4 }}{%- endcapture -%}
+    {% for product in collection.products %}
+      {%- capture loopPosition -%}{{ forloop.index0 }}{%- endcapture -%}
+      {%- capture loopModulo -%}{{ forloop.index0 | modulo: 4 }}{%- endcapture -%}
+      {%- if loopModulo == '0' -%}
+      <div class="featured-collection__carousel-page featured-collection__carousel-page--{{collectionFinalModulo}}">
+      {%- endif -%}
       <a href="{{ product.url | within: collection }}" class="featured-collection__item" data-element="carousel__item">
         <template type="application/json" data-role="product-data">
           {{- product | json -}}
@@ -28,6 +35,7 @@
               max_width: 480,
               max_height: 480
             %}
+            {% comment %} <img src="{{product.featured_image.url | img_url: '350x350'}}"> {% endcomment %}
             <div class="featured-collection__quick-view-wrapper">
               <button class="featured-collection__quick-view">
                 Quick View
@@ -61,6 +69,10 @@
           {% endif %}
         </span>
       </a>
+
+      {%- if loopModulo == '3' or loopPosition == collectionFinalIndex -%}
+      </div>
+      {%- endif -%}
     {% else %}
       {% for i in (1..4) %}
         <a href="#" class="featured-collection-item">
