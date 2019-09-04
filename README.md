@@ -14,6 +14,16 @@ You'll want to ensure you have the following already installed on your local mac
 
 - **NPM 5+ or Yarn:** Both of these package managers have [ups and downs](https://blog.risingstack.com/yarn-vs-npm-node-js-package-managers/), choose whichever you prefer. Follow the installation instructions [for Yarn](https://yarnpkg.com/en/docs/install) or [NPM](https://www.npmjs.com/get-npm) to make sure you're using the latest version.
 
+## Developing
+
+```bash
+yarn start
+```
+
+## Storybook
+
+I used Storybook for a bit during initial development, but couldn't quite get it to play nicely with Shopify's Webpack config and so can't do production builds.
+
 ## Setting up SSL on Ubuntu
 
 ```bash
