@@ -1,3 +1,16 @@
+# [1.15.0](https://github.com/ryaninvents/taproom-sample/compare/v1.14.0...v1.15.0) (2019-09-04)
+
+
+### Bug Fixes
+
+* adjust hero styling ([4d1d6db](https://github.com/ryaninvents/taproom-sample/commit/4d1d6db))
+* use correct styles for quick-view buttons ([413324d](https://github.com/ryaninvents/taproom-sample/commit/413324d))
+
+
+### Features
+
+* add button to hero ([9dc807e](https://github.com/ryaninvents/taproom-sample/commit/9dc807e))
+
 # [1.14.0](https://github.com/ryaninvents/taproom-sample/compare/v1.13.0...v1.14.0) (2019-09-03)
 
 
