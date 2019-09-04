@@ -8,8 +8,8 @@
   flex-flow: column nowrap;
   align-items: start;
   justify-content: flex-end;
-  padding-bottom: $space-8;
-  background-position: 0% 100%;
+  padding-bottom: 2rem;
+  background-position: 0% 60%;
   background-size: 250%;
   background-origin: border-box;
 
@@ -42,7 +42,7 @@
 }
 
 .hero__inner {
-  padding: $space-6;
+  padding: 1.5rem;
 }
 
 .hero__content {
@@ -59,12 +59,12 @@
 }
 
 .hero__mega-title {
-  line-height: 1.25;
-  margin-bottom: $space-5;
+  line-height: (39rem / 16);
+  margin-bottom: 1.25rem;
   font-size: 2rem;
   
   @media screen and (min-width: 768px) {
-    line-height: 0.9;
+    line-height: (71rem / 16);
     font-size: 4rem;
   }
 }
@@ -74,7 +74,7 @@
   line-height: 1.6;
 
   @media screen and (min-width: 768px) {
-    line-height: 1.31;
+    line-height: (30rem / 16);
   }
 }
 

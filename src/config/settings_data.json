@@ -54,7 +54,9 @@
           "announcement_bar_link": "",
           "logo": "shopify:\/\/shop_images\/trifecta-lockup-dark_5024ba22-b382-443c-b90b-3d0af06722a2.png",
           "logo_max_width": 140,
-          "menu": "main-menu"
+          "menu": "main-menu",
+          "menu_featured_image": "shopify:\/\/shop_images\/hays1.jpg",
+          "menu_feature_button_text": "Shop Men's"
         }
       },
       "footer": {
