@@ -13,6 +13,7 @@ import Button from '../util/Button';
 import useStyler from '../util/useStyler';
 import QuantityAttention from '../util/QuantityAttention';
 
+/** Quick and dirty event bus for passing events. */
 class Bus {
   listeners = [];
   addEventListener(fn) {
@@ -26,6 +27,9 @@ class Bus {
   }
 }
 
+/**
+ * QuickView modal with interactive elements that modify the visitor's cart.
+ */
 function QuickViewModal({variantId, title, vendor = 'Vendor Name', imageSrc, sku = 'SKU-001', price, description, modalRef}) {
   const [qty, setQty] = useState(1);
   const [cartQuantity, setCartQuantity] = useState(null);
@@ -103,6 +107,7 @@ function useListenerConnection(bus, setState) {
   }, [bus]);
 }
 
+/** Create a Popmotion animation to display the modal */
 function animateIn() {
   return timeline([
     {
@@ -122,6 +127,7 @@ function animateIn() {
   ]);
 }
 
+/** Create a Popmotion animation to hide the modal */
 function animateOut() {
   return timeline([
     {
@@ -141,6 +147,7 @@ function animateOut() {
   ]);
 }
 
+/** Component which represents the entire QuickView. */
 function QuickView({dialogIntentBus, defaultIsOpen = false, ...props}) {
 
   /** Track whether the modal is open (target state). */
