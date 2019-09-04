@@ -1,4 +1,12 @@
 @import '../variables.scss';
+@import '../../scripts/util/Button';
+
+/**
+ * Width of a carousel page in viewport-width-percentage units (`vw`).
+ *
+ * At large screen sizes, this space will be divided among the 4 visible carousel elements.
+ */
+$carouselPageWidth: 72;
 
 .featured-collection {
   display: flex;
@@ -49,8 +57,6 @@
 
   scroll-snap-type: x mandatory;
 }
-
-$carouselPageWidth: 72;
 
 .featured-collection__carousel-page {
   display: inline-flex;
@@ -136,10 +142,6 @@ $carouselPageWidth: 72;
 }
 
 .featured-collection__quick-view {
-  background-color: var(--color-dark);
-  color: var(--color-light);
-  border-radius: 0;
-  border-width: 0;
-  padding: $space-4;
-  font-family: var(--font-body);
+  @extend .btn;
+  @extend .btn--primary;
 }
