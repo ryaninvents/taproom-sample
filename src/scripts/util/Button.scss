@@ -7,6 +7,10 @@
   cursor: pointer;
 }
 
+a.btn:hover {
+  text-decoration: none;
+}
+
 .btn--primary {
   background-color: var(--color-dark);
   color: var(--color-light);

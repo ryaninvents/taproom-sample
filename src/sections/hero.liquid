@@ -34,7 +34,7 @@
             <div class="rte-setting mega-subtitle{% if section.settings.text_size == 'large' %} mega-subtitle--large{% endif %}">{{ section.settings.text }}</div>
           {%- endif -%}
           {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
-            <a href="{{ section.settings.button_link }}" class="btn hero__btn">
+            <a href="{{ section.settings.button_link }}" class="btn btn--primary hero__btn">
               {{ section.settings.button_label | escape }}
             </a>
           {%- endif -%}
@@ -87,7 +87,7 @@
             <div class="rte-setting hero__mega-subtitle{% if section.settings.text_size == 'large' %} mega-subtitle--large{% endif %}">{{ section.settings.text }}</div>
           {%- endif -%}
           {%- if section.settings.button_label != blank and section.settings.button_link != blank -%}
-            <a href="{{ section.settings.button_link }}" class="btn hero__btn">
+            <a href="{{ section.settings.button_link }}" class="btn btn--primary hero__btn">
               {{ section.settings.button_label | escape }}
             </a>
           {%- endif -%}

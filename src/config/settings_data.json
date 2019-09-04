@@ -77,8 +77,8 @@
           "subtitle_font": "montserrat_i3",
           "title": "Hero Headline Dolor Sit Amet",
           "text": "<p>Description curabitur lobortis id lorem id bibendum. Ut id consectetur magna. Quisque volutpat augue enim, pulvinar lobortis nibh lacinia at vestibulum nec.<\/p>",
-          "button_label": "",
-          "button_link": ""
+          "button_label": "Shop now",
+          "button_link": "shopify:\/\/collections\/all"
         }
       }
     },

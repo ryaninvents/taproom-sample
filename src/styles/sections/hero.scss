@@ -1,4 +1,5 @@
 @import '../variables';
+@import '../../scripts/util/Button';
 
 .hero__overlay {
   position: relative;
@@ -75,4 +76,11 @@
   @media screen and (min-width: 768px) {
     line-height: 1.31;
   }
+}
+
+.btn.hero__btn {
+  font-weight: 500;
+  font-size: 1rem;
+  line-height: (14rem / 16);
+  padding: (14rem / 16) 1.25rem;
 }
