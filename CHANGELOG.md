@@ -1,3 +1,10 @@
+## [1.15.1](https://github.com/ryaninvents/taproom-sample/compare/v1.15.0...v1.15.1) (2019-09-04)
+
+
+### Bug Fixes
+
+* ensure scroll carousel is centered ([3127b90](https://github.com/ryaninvents/taproom-sample/commit/3127b90))
+
 # [1.15.0](https://github.com/ryaninvents/taproom-sample/compare/v1.14.0...v1.15.0) (2019-09-04)
 
 
